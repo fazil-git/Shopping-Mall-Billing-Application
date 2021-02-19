@@ -38,7 +38,7 @@ public class ActionServlet extends HttpServlet {
 		}
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected synchronized void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		rp=rp.getClone();
 		rp.process(request, response);
 	}
